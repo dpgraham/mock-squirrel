@@ -1,0 +1,25 @@
+{
+  "name": "mock-squirrel",
+  "version": "1.0.0",
+  "description": "Mock a Squirrel server for testing purposes",
+  "main": "build/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test",
+    "build": "babel lib --out-dir build/",
+    "build:watch": "babel lib --out-dir build/ --watch",
+    "lint": "eslint lib/ test/"
+  },
+  "author": "Dan Graham",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.1",
+    "eslint-config-appium": "^2.1.0"
+  }
+}
