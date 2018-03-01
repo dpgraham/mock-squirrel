@@ -10,7 +10,7 @@ describe('handlers.js', function () {
   beforeEach(function () {
     reset();
   });
-  describe('update', function () {
+  describe('update()', function () {
     it('should reject invalid platform name with 500 status', async function () {
       await update({platform: 'bogus'}).should.eventually.eql({status: 500, message: 'Invalid platform'});
     });
@@ -31,22 +31,22 @@ describe('handlers.js', function () {
       await update({platform: PLATFORMS.MAC, version: 'v1.1.0'}).should.eventually.eql({status: 204});
     });
     it('should do 200 if latest is different from passed-in version', async function () {
-      addEntry(PLATFORMS.MAC, '1.1.0', '/fake/path', 1);
+      addEntry(PLATFORMS.MAC, '1.1.0', '/fake/path', 'notes', 1);
       await update({platform: PLATFORMS.MAC, version: '1.2.0'}).should.eventually.eql({
         status: 200,
         name: '1.1.0',
         pub_date: 1,
-        // notes: 'afdsafsadd' // TODO: Add release notes
+        notes: 'notes',
         // url: `` // TODO: Add URL with BaseURL from a config
       });
     });
     it('should do 200 if latest is different from passed-in version and should respect SEMVER', async function () {
-      addEntry(PLATFORMS.MAC, '1.1.0', '/fake/path', 1);
+      addEntry(PLATFORMS.MAC, '1.1.0', '/fake/path', 'notes', 1);
       await update({platform: PLATFORMS.MAC, version: 'v1.2.0'}).should.eventually.eql({
         status: 200,
         name: '1.1.0',
         pub_date: 1,
-        // notes: 'afdsafsadd' // TODO: Add release notes
+        notes: 'notes',
         // url: `` // TODO: Add URL with BaseURL from a config
       });
     });
