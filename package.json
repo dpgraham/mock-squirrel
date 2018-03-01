@@ -9,6 +9,7 @@
   "scripts": {
     "test": "mocha test/unit/",
     "test:watch": "mocha --watch test/unit/",
+    "test:e2e": "mocha --timeout 6000 test/e2e/",
     "build": "babel lib --out-dir build/",
     "build:watch": "babel lib --out-dir build/ --watch",
     "lint": "eslint lib/ test/"
@@ -24,6 +25,7 @@
     "chai-as-promised": "^7.1.1",
     "eslint": "^4.18.1",
     "eslint-config-appium": "^2.1.0",
+    "request-promise": "^4.2.2",
     "sinon": "^4.4.2"
   },
   "dependencies": {
