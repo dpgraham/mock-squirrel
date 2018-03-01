@@ -29,6 +29,8 @@
   "dependencies": {
     "appium-support": "^2.13.0",
     "lodash": "^4.17.5",
+    "micro": "^9.1.0",
+    "semver": "^5.5.0",
     "winston": "^2.4.0"
   }
 }
