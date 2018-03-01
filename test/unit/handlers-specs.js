@@ -37,7 +37,7 @@ describe('handlers.js', function () {
         name: '1.1.0',
         pub_date: 1,
         notes: 'notes',
-        // url: `` // TODO: Add URL with BaseURL from a config
+        url: `download/darwin/`,
       });
     });
     it('should do 200 if latest is different from passed-in version and should respect SEMVER', async function () {
@@ -47,7 +47,7 @@ describe('handlers.js', function () {
         name: '1.1.0',
         pub_date: 1,
         notes: 'notes',
-        // url: `` // TODO: Add URL with BaseURL from a config
+        url: `download/darwin/`,
       });
     });
 
