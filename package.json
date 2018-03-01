@@ -12,7 +12,8 @@
     "test:e2e": "mocha --timeout 6000 test/e2e/",
     "build": "babel lib --out-dir build/",
     "build:watch": "babel lib --out-dir build/ --watch",
-    "lint": "eslint lib/ test/"
+    "lint": "eslint lib/ test/",
+    "postinstall": "npm run build"
   },
   "author": "Dan Graham",
   "license": "ISC",
